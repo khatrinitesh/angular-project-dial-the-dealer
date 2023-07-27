@@ -19,8 +19,6 @@ export class LoginComponent{
       username: ['', Validators.required],
       password: ['', [Validators.required]]
     });
-
-   
   }
 
   submitForm():void {
