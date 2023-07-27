@@ -115,6 +115,29 @@ body{
             width: 100%;
         }
     }
+    .info_block{
+        .link{
+            color:var(--primary_color);
+            font-size: var(--fs14);
+            font-family: var(--ff_poppins);
+            font-weight: var(--fw7);
+            text-decoration: none;
+            margin:0 0 10px;
+        }
+        .desc{
+            color:var(--black_color);
+            font-size: var(--fs14);
+            font-family: var(--ff_poppins);
+            font-weight: var(--fw4);
+            .link{
+                color:var(--primary_color);
+                font-size: var(--fs14);
+                font-family: var(--ff_poppins);
+                font-weight: var(--fw7);
+                text-decoration: none;
+            }
+        }
+    }
 }
 
 
@@ -216,3 +239,4 @@ body{
         }
     }
 }
+

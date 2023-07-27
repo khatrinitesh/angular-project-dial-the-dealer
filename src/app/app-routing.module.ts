@@ -4,12 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { UserregComponent } from './pages/userreg/userreg.component';
+import { ForgotpwdComponent } from './pages/forgotpwd/forgotpwd.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'userreg', component: UserregComponent },
+  { path: 'forgotpwd', component: ForgotpwdComponent },
   { path: 'home', component: HomeComponent },
+  
 ];
 
 @NgModule({

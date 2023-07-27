@@ -25,6 +25,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSelectModule} from '@angular/material/select';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { ClientsComponent } from './pages/clients/clients.component';
+import { ForgotpwdComponent } from './pages/forgotpwd/forgotpwd.component';
 
 
 
@@ -41,6 +42,7 @@ import { ClientsComponent } from './pages/clients/clients.component';
     LoginComponent,
     UserregComponent,
     ClientsComponent,
+    ForgotpwdComponent,
   ],
   imports: [
     BrowserModule,

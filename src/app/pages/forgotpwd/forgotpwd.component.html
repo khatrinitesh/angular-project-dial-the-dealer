@@ -1,0 +1,30 @@
+<div class="form_content">
+    <div class="container">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Login</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <form class="example-form" [formGroup]="myForm">
+                <table class="example-full-width" cellspacing="0">
+                  <tr>
+                    <td>
+                      <mat-form-field class="example-full-width">
+                        <input formControlName="email"  name="email"  matInput placeholder="Email">
+                        <!-- <mat-error *ngIf="myForm.controls.username?.invalid && (myForm.controls.username?.dirty || myForm.controls.username?.touched)">
+                          <span *ngIf="myForm.controls.username?.errors?.required">Username is required.</span>
+                        </mat-error> -->
+                      </mat-form-field>
+                    </td>
+                  </tr>
+              </table>
+              </form>
+            </mat-card-content>
+            <div class="mt-2 d-flex flex-column align-items-center justify-content-center info_block">
+              <a routerLink=""  class="link">Send Password Reset Link</a>
+              <p class="desc">Don't have account? <a routerLink="/userreg"  class="link">Sign Up</a></p>
+              <a routerLink="/login"  class="link">Click here to Login</a>
+            </div>
+          </mat-card>
+    </div>
+</div>

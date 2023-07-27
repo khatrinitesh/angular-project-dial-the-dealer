@@ -1,6 +1,6 @@
 <div class="form_content">
     <div class="container">
-        <mat-card class="example-card">
+        <!-- <mat-card class="example-card">
             <mat-card-header>
               <mat-card-title>Register</mat-card-title>
             </mat-card-header>
@@ -127,12 +127,143 @@
                     </tr>
                 </table>
               </form>
-              <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
             </mat-card-content>
             <mat-card-actions>
-              <!-- <button mat-raised-button (click)="register()" color="primary">Register</button> -->
               <button mat-raised-button type="submit" [disabled]="myForm.invalid" color="primary">Register</button>
             </mat-card-actions>
+            <div class="mt-2 d-flex flex-column align-items-center justify-content-center info_block">
+                <p class="desc">Already have an account? <a routerLink="/login"  class="link">Sign In</a></p>
+              </div>
+        </mat-card> -->
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Register</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <form class="example-form" [formGroup]="myForm" (ngSubmit)="submitForm()">
+                <table class="example-full-width" cellspacing="0">
+                  <tr>
+                    <td>
+                      <mat-form-field class="example-full-width">
+                        <input formControlName="name"  name="name" [(ngModel)]="name"  matInput placeholder="Name" required >
+                        <mat-error *ngIf="myForm.controls.name?.invalid && (myForm.controls.name?.dirty || myForm.controls.name?.touched)">
+                          <span *ngIf="myForm.controls.name?.errors?.required">Name is required.</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+                  <tr>
+                  <td>
+                      <mat-form-field class="example-full-width">
+                        <input type="email" formControlName="email" name="email" [(ngModel)]="email" matInput placeholder="Email" required >
+                        <mat-error *ngIf="myForm.controls.email?.invalid && (myForm.controls.email?.dirty || myForm.controls.email?.touched)">
+                          <span *ngIf="myForm.controls.email?.errors?.required">Email is required.</span>
+                        </mat-error>
+                      </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                          <input type="password" formControlName="password" name="password" [(ngModel)]="password" matInput placeholder="Password" required >
+                          <mat-error *ngIf="myForm.controls.password?.invalid && (myForm.controls.password?.dirty || myForm.controls.password?.touched)">
+                            <span *ngIf="myForm.controls.password?.errors?.required">Password is required.</span>
+                          </mat-error>
+                        </mat-form-field>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                          <input type="password" formControlName="confirmpassword" name="confirmpassword" [(ngModel)]="confirmpassword" matInput placeholder="Confirm Password" required >
+                          <mat-error *ngIf="myForm.controls.confirmpassword?.invalid && (myForm.controls.confirmpassword?.dirty || myForm.controls.confirmpassword?.touched)">
+                            <span *ngIf="myForm.controls.confirmpassword?.errors?.required">Confirm Password is required.</span>
+                          </mat-error>
+                        </mat-form-field>
+                    </td>
+                  </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                            <input formControlName="phone" name="phone" [(ngModel)]="phone" matInput placeholder="Phone" required >
+                            <mat-error *ngIf="myForm.controls.phone?.invalid && (myForm.controls.phone?.dirty || myForm.controls.phone?.touched)">
+                                <span *ngIf="myForm.controls.phone?.errors?.required">Phone is required.</span>
+                            </mat-error>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <mat-select formControlName="state" name="countryVaraible" [(value)]="selectedCountry" placeholder="State">
+                                  <mat-option *ngFor="let country of countries" [value]="country.short">
+                                    {{country.full}}
+                                  </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="myForm.controls.state?.invalid && (myForm.controls.state?.dirty || myForm.controls.state?.touched)">
+                                    <span *ngIf="myForm.controls.state?.errors?.required">State is required.</span>
+                                </mat-error>
+                              </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <mat-select formControlName="city" name="cityVaraible" [(value)]="selectedCity" placeholder="City">
+                                  <mat-option *ngFor="let city of cities" [value]="city.short">
+                                    {{city.full}}
+                                  </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="myForm.controls.city?.invalid && (myForm.controls.city?.dirty || myForm.controls.city?.touched)">
+                                    <span *ngIf="myForm.controls.city?.errors?.required">City is required.</span>
+                                </mat-error>
+                              </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <input matInput placeholder="Pincode" formControlName="pincode">
+                                <mat-error *ngIf="myForm.controls.pincode?.invalid && (myForm.controls.pincode?.dirty || myForm.controls.pincode?.touched)">
+                                    <span *ngIf="myForm.controls.pincode?.errors?.required">Pincode is required.</span>
+                                </mat-error>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field class="example-full-width">
+                                <textarea matInput placeholder="address" formControlName="address"></textarea>
+                                <mat-error *ngIf="myForm.controls.address?.invalid && (myForm.controls.address?.dirty || myForm.controls.address?.touched)">
+                                    <span *ngIf="myForm.controls.address?.errors?.required">Address is required.</span>
+                                </mat-error>
+                            </mat-form-field>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <mat-form-field>
+                                <mat-select formControlName="state2" name="countryVaraible" [(value)]="selectedCountry" placeholder="State">
+                                  <mat-option *ngFor="let country of countries" [value]="country.short">
+                                    {{country.full}}
+                                  </mat-option>
+                                </mat-select>
+                                <mat-error *ngIf="myForm.controls.state2?.invalid && (myForm.controls.state2?.dirty || myForm.controls.state2?.touched)">
+                                    <span *ngIf="myForm.controls.state2?.errors?.required">Alerts is required.</span>
+                                </mat-error>
+                              </mat-form-field>
+                        </td>
+                    </tr>
+              </table>
+              </form>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Register</button>
+            </mat-card-actions>
+            <div class="mt-2 d-flex flex-column align-items-center justify-content-center info_block">
+              <a routerLink="/forgotpwd"  class="link">Forgot Password</a>
+              <p class="desc">Already have an account? <a routerLink="/login"  class="link">Sign In</a></p>
+            </div>
           </mat-card>
     </div>
 </div>

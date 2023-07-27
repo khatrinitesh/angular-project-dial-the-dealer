@@ -34,6 +34,10 @@
               <!-- <button mat-raised-button (click)="login()" color="primary">Login</button> -->
               <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Login</button>
             </mat-card-actions>
+            <div class="mt-2 d-flex flex-column align-items-center justify-content-center info_block">
+              <a routerLink="/forgotpwd"  class="link">Forgot Password</a>
+              <p class="desc">Don't have account? <a routerLink="/userreg"  class="link">Sign Up</a></p>
+            </div>
           </mat-card>
     </div>
 </div>

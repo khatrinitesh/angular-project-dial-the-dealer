@@ -9,10 +9,10 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent{
   myForm!: FormGroup;
-  constructor(private router: Router,private formBuilder: FormBuilder) { }
-
   username!: string;
   password!: string;
+
+  constructor(private router: Router,private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
     this.myForm = this.formBuilder.group({
@@ -22,20 +22,20 @@ export class LoginComponent{
   }
 
   submitForm():void {
-    // if (this.username == 'admin' && this.password == 'admin') {
-    //   // Form is valid, handle form submission here
-    //   this.router.navigate(['/userreg']);
-    //   console.log(this.myForm.valid); // Access form values using this.myForm.value
-    // } else {
-    //   // Form is invalid, display error messages or take appropriate action
-    //   console.log("Form is invalid.");
-    // }
-
-    if(this.username && this.password){
-      this.router.navigate(['/userreg']);
+    const isAuthenticated = this.checkCredentials();
+    if (isAuthenticated) {
+      // Form is valid, handle form submission here
+      this.router.navigate(['userreg']);
+      console.log(this.myForm.valid); // Access form values using this.myForm.value
     } else {
-      alert('enter username and password');
+      // Form is invalid, display error messages or take appropriate action
+      console.log("Invalid credentials. Please try again.");
     }
+  }
+  private checkCredentials(): boolean {
+    // Replace this with your actual authentication logic (e.g., API call, etc.)
+    // For demonstration purposes, I'm using a simple hardcoded check
+    return this.username === 'demo' && this.password === 'password';
   }
 
   // login() : void {
