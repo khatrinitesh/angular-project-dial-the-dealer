@@ -1,0 +1,44 @@
+.client_section{
+    padding: 100px 0;
+    background-color: var(--secondary_color);
+    .section_title{
+        text-align: center;
+        .headtitle{
+            color:var(--white_color);
+            margin:0 0 80px;
+            font-size: var(--fs48);
+            font-family: var(--ff_playfair);
+            font-weight: var(--fw7);
+        }
+    }
+    .inner_clients{
+        .box_client{
+            .txt_name{
+                color:var(--white_color);
+                margin:0 0 20px;
+                font-size: var(--fs20);
+                font-family: var(--ff_poppins);
+                font-weight: var(--fw7);
+            }
+            .txt_jobtitle{
+                color:var(--gray_color1);
+                margin:0 0 20px;
+                font-size: var(--fs12);
+                font-family: var(--ff_poppins);
+                font-weight: var(--fw4);
+                display: block;
+            }
+            .thumbnail{
+                margin:0 0 30px;
+            }
+            .desc{
+                color:var(--gray_color1);
+                margin:0 0 20px;
+                font-size: var(--fs16);
+                font-family: var(--ff_poppins);
+                font-weight: var(--fw4);
+                line-height: 30px;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.banner_content{
+    background: url('../../../assets/img/banner.png') no-repeat center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding:200px 0;
+    text-align: center;
+    .bigtitle{
+        color:var(--primary_color);
+        font-size: var(--fs80px);
+        font-family: var(--ff_playfair);
+        font-weight: var(--fw9);
+    }
+}

@@ -1,0 +1,25 @@
+<section class="aboutus_content" data-aos="fade-up">
+    <div class="container">
+        <div class="title_block">
+            <div class="logo_block">
+                <img src="../../../assets/img/logowhite.png" class="img_fit"/>
+            </div>
+            <h2 class="section_title">{{headtitle}}</h2>
+        </div>
+        <div class="about_feature" *ngFor="let feature of features">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="left_feature"  data-aos="flip-left" data-aos-delay="100">
+                        <img src="{{feature.imgUrl}}" class="img-fluid img_fit"/>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="right_feature"  data-aos="flip-right" data-aos-delay="300">
+                        <h3 class="subtitle">{{feature.subtitle}}</h3>
+                        <p class="desc">{{feature.desc}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

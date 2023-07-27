@@ -1,0 +1,218 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css"; 
+@import "bootstrap/dist/css/bootstrap.min.css"; 
+@import "fontawesome-4.7/css/font-awesome.min.css"; 
+@import 'aos/dist/aos.css';
+
+
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+
+
+ul,ol{
+    margin:0 !important;
+}
+
+:root{
+    --primary_color:#010b57;
+    --secondary_color:#3f5375;
+    --black_color:#000000;
+    --white_color:#ffffff;
+    --darkblue:#506a95;
+    --lightbrown:#e2cc97;
+    --gray_color1:#d3d3d4;
+
+    // FONT FAMILY
+    --ff_poppins: 'Poppins', sans-serif;
+    --ff_playfair: 'Playfair Display', serif;
+
+    // FONT SIZE
+    --fs12:12px;
+    --fs13:13px;
+    --fs14:14px;
+    --fs16:16px;
+    --fs18:18px;
+    --fs20:20px;
+    --fs24:24px;
+    --fs28:28px;
+    --fs32:32px;
+    --fs48:48px;  
+    --fs60:60px;
+    --fs80px:80px;
+
+    // FONT WEIGHT
+    --fw1:100;
+    --fw2:200;
+    --fw3:300;
+    --fw4:400;
+    --fw5:500;
+    --fw6:600;
+    --fw7:700;
+    --fw8:800;
+    --fw9:900;
+}
+
+body{
+    font-family:var(--ff_poppins);
+    font-size: var(--fs16);
+}
+
+.main_content{
+    height: calc(100% - 100px);
+    background-color: var(--white_color);
+}
+
+.btn_primary{
+    height: 40px;
+    border:1px solid  var(--lightbrown);
+    background-color: var(--lightbrown);
+    color:var(--black_color);
+    font-size: var(--fs16);
+    font-family: var(--ff_poppins);
+    font-weight: var(--fw7);
+    text-transform: uppercase;
+    padding:0 20px;
+    border-radius: 20px;
+    transition:all .4s linear;
+    -webkit-transition:all .4s linear;
+    -moz-transition:all .4s linear;
+    -ms-transition:all .4s linear;
+    &:hover{
+        border-color: var(--secondary_color);
+        background-color: var(--secondary_color);
+        color:var(--white_color);
+    }
+}
+
+.form_content{
+    padding:50px 0;
+    max-width: 376px;
+    margin: 100px auto 0;
+    .mat-mdc-card-header{
+        width: 100%;
+        text-align: center;
+        .mat-mdc-card-header-text{
+            width: 100%;
+            .mat-mdc-card-title{
+                text-align: center;
+                color:var(--primary_color);
+                font-weight: var(--fw7);
+                font-family: var(--ff_poppins);
+                width: 100%;
+                margin:0 0 20px;
+            }
+        }
+    }
+    .example-full-width{
+        width: 100%;
+        .mat-mdc-form-field{
+            width: 100%;
+        }
+        
+    }
+    .mat-mdc-card-actions{
+        .mat-mdc-raised-button{
+            width: 100%;
+        }
+    }
+}
+
+
+// MEDIA QUERIES RESPONSIVE FOR ALL DEVICES
+@media (max-width:1199px){
+    .navbar {
+        .navbar-nav {
+            .nav-item{
+                &:not(:last-child){
+                    margin:0 10px 0 0 !important;
+                }
+            }
+        }
+    }
+}
+@media (max-width:991px){
+    .navbar {
+        .navbar-toggler{
+            position: absolute;
+            background-color: var(--primary_color);
+            top: 20px;
+            right: 20px;
+            .navbar-toggler-icon{
+                filter:brightness(1) invert(1);
+                -webkit-filter:brightness(1) invert(1)
+            }
+        }
+        .navbar-nav{
+            padding:10px !important;
+            margin: 126px 0 0 !important;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: var(--primary_color);
+            width: 100%;
+            .nav-item{
+                .nav-link{
+                    color:var(--white_color) !important;
+                    &.active{
+                        color:var(--secondary_color) !important;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+@media (max-width:767px){
+    .navbar {
+        .navbar-nav{
+            margin:90px 0 0 !important;
+        }
+        .navbar-brand {
+            img{
+                max-width: 50px !important;
+                margin:0 10px 0 0 !important;
+            }
+        }
+    }
+    .banner_content {
+        padding:50px 0;
+        .bigtitle{
+            font-size: var(--fs60) !important;
+        }
+    }
+    .aboutus_content {
+        padding:50px 0 !important;
+        .title_block {
+            margin:0 0 30px;
+        }
+        .about_feature{
+            .left_feature {
+                margin:0 0 20px;
+            }
+            .right_feature{
+                .subtitle{
+                    font-size: var(--fs28);
+                }
+            }
+        }
+    }
+    .states_content {
+        padding:50px 0 !important;
+        .inner_states {
+            .states_left{
+                position: relative !important;
+                width: 100% !important;
+                margin:0 0 30px;
+            }
+        }
+    }
+    .client_section{
+        padding:50px 0 !important;
+        .inner_clients{
+            .box_client {
+                text-align: center;
+            }
+        }
+    }
+}

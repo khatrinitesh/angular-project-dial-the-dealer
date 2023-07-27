@@ -1,0 +1,21 @@
+<section class="client_section">
+    <div class="container">
+        <div class="section_title">
+            <h2 class="headtitle">{{headtitle}}</h2>
+        </div>
+        <div class="inner_clients">
+            <div class="row">
+                <div class="col-md-4 gridcol" *ngFor="let client of clients" data-aos="fade-up" data-aos-delay="300">
+                    <div class="box_client" >
+                        <h3 class="txt_name">{{client.name}}</h3>
+                        <span class="txt_jobtitle">{{client.jobtitle}}</span>
+                        <div class="thumbnail">
+                            <img src={{client.thumb}} class="img-fluid"/>
+                        </div>
+                        <p class="desc">{{client.desc}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

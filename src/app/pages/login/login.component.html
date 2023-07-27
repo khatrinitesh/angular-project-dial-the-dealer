@@ -1,0 +1,39 @@
+<div class="form_content">
+    <div class="container">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <mat-card-title>Login</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+              <form class="example-form" [formGroup]="myForm" (ngSubmit)="submitForm()">
+                <table class="example-full-width" cellspacing="0">
+                  <tr>
+                    <td>
+                      <mat-form-field class="example-full-width">
+                        <input formControlName="username"  name="username" [(ngModel)]="username"  matInput placeholder="Username" required >
+                        <mat-error *ngIf="myForm.controls.username?.invalid && (myForm.controls.username?.dirty || myForm.controls.username?.touched)">
+                          <span *ngIf="myForm.controls.username?.errors?.required">Username is required.</span>
+                        </mat-error>
+                      </mat-form-field>
+                    </td>
+                  </tr>
+                  <tr>
+                  <td>
+                      <mat-form-field class="example-full-width">
+                        <input formControlName="password" name="password" [(ngModel)]="password" matInput placeholder="password" required >
+                        <mat-error *ngIf="myForm.controls.password?.invalid && (myForm.controls.password?.dirty || myForm.controls.password?.touched)">
+                          <span *ngIf="myForm.controls.password?.errors?.required">Password is required.</span>
+                        </mat-error>
+                      </mat-form-field>
+                  </td>
+                </tr>
+              </table>
+              </form>
+            </mat-card-content>
+            <mat-card-actions>
+              <!-- <button mat-raised-button (click)="login()" color="primary">Login</button> -->
+              <button mat-raised-button color="primary" type="submit" [disabled]="myForm.invalid">Login</button>
+            </mat-card-actions>
+          </mat-card>
+    </div>
+</div>
